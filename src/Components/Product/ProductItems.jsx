@@ -16,11 +16,11 @@ const ProductItems = () => {
           <KidsProd/>
       </div>
       <div className='Wears'>
-        <h2 className='ProductTitle'>Mens wear</h2>
+        <h2 className='ProductTitle'>Men's wear</h2>
           <MensProd/>
       </div>
       <div className='Wears'>
-        <h2 className='ProductTitle'>Men's wear</h2>
+        <h2 className='ProductTitle'>Women's wear</h2>
           <WomensProd/>
       </div>
       <div className='Wears'>
