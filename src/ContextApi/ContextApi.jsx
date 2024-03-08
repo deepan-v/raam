@@ -24,7 +24,6 @@ const ContextApi = ({children}) => {
   let [UserName , SetUserName] = useState(JSON.parse(localStorage.getItem('name')) || null)
   let [Bool ,SetBool] = useState(false) 
   let [Boolean ,SetBoolean] = useState('')
-//   console.log(Boolean);
   let [CartItems, SetCartItems] = useState(() => JSON.parse(localStorage.getItem('Items')) || MainFun());
   let [BeautyItem , SetBeautyItem] = useState(BeautyItems)
   let [Total , SetTotal] = useState(0)
@@ -34,8 +33,8 @@ const ContextApi = ({children}) => {
   let [Basket , SetBasket] = useState(0)
 
   let BasketUpdate = ()=>{
-      let Count = 0
 
+      let Count = 0
       for(let key in CartItems){
            Count += CartItems[key]
       }
@@ -136,7 +135,7 @@ const ContextApi = ({children}) => {
     for(let key in CartItems){
       total[key]=  CartItems[key] = 0 
    }
-   localStorage.setItem('Items' , JSON.stringify(total) )
+   localStorage.setItem('Items' , JSON.stringify(MainFun()) )
    SetBool(!Bool)
 
  }
@@ -255,6 +254,7 @@ const ContextApi = ({children}) => {
   let RemoveItems = ()=>{
      localStorage.removeItem('name');
      localStorage.removeItem('password');
+     SetCartItems(MainFun())
      SetBool(!Bool)
   }
 
